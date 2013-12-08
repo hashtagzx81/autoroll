@@ -1,4 +1,6 @@
 // initialise autoroll functionality
+var autoroll = {};
+
 var autorollInit = function(){
 
 
@@ -21,11 +23,12 @@ var autorollInit = function(){
   
   $("#onLoseReturnToBase").on('click', function(){
     if($("#onLoseMultiplier").prop('disabled')){
-//        enabled_css.backgroundColor = $('#onLoseMultiplier').css('background-color');
         $("#onLoseMultiplier").prop('disabled', false);
         $('#onLoseMultiplier').css('background-color', 'red');
         $('#onLoseMultiplier').css('color', 'yellow');
     } else {
+        autoroll.enabled_input_backgroundColor = $('#onLoseMultiplier').css('background-color');
+        autoroll.enabled_input_color = $('#onLoseMultiplier').css('color');
         $("#onLoseMultiplier").prop('disabled', true);    
     }    
   });
