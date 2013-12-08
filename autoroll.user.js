@@ -60,7 +60,7 @@ console.log("inserting #extern");
         "https://rawgithub.com/hashtagzx81/autoroll/master/autoroll.html",
         function(){
 console.log("initialising #autoroll");
-            autorollInit();        
+            autoroll.init();        
         }
     ); //autorollInit needs html to be loaded
     
