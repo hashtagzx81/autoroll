@@ -41,7 +41,7 @@ autoroll.init = function(){
         
         autoroll.base = base.toFixed(8);
         autoroll.odds = odds.toFixed(4);
-        autoroll.high-low = isLow ? 0 : 1;
+        autoroll.high-low = isLow == true ? 0 : 1;
         autoroll.onWin = onWinReturnToBase ? true : onWinMultiplier;
         autoroll.onLose = onLoseReturnToBase ? true : onLoseMultiplier;
         autoroll.maxRolls = max_rolls;
