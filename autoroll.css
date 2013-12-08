@@ -38,10 +38,10 @@
  margin:5px;
 }
 
-.autoroll-enabled{
+.autoroll-input:disabled{
  background-color:yellow;
 }
 
-.autoroll-disabled{
+.autoroll-input:enabled{
  background-color:green;
 }
