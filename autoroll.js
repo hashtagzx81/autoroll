@@ -1,11 +1,8 @@
 // initialise autoroll functionality
 var autoroll = {};
 
-var autorollInit = function(){
+autoroll.init = function(){
 
-  autoroll.enabled_input_backgroundColor = $('#onLoseMultiplier').css('background-color');
-  autoroll.enabled_label_color = $('#onLoseMultiplierLabel').css('color');
-  
   $("#autoroll-show").on("click", function(){
     if($('#autoroll-form').is(':visible')){
         $('#autoroll-form').hide();        
@@ -51,6 +48,7 @@ var autorollInit = function(){
         
     } else {
         $('#autoroll-start').text("Start");
+        autoroll.stop();
     }
   });
   
@@ -75,8 +73,12 @@ var autorollInit = function(){
     }    
   });
 
-  autoroll.start = function(){
-console.log(this);
-  }
+}
 
+autoroll.start = function(){
+console.log(this);
+}
+
+autoroll.stop = function(){
+console.log('to be implemented');
 }
