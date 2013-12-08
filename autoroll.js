@@ -3,7 +3,8 @@ var autoroll = {};
 
 var autorollInit = function(){
 
-
+  autoroll.enabled_input_backgroundColor = $('#onLoseMultiplier').css('background-color');
+  
   $("#autoroll-show").on("click", function(){
     if($('#autoroll-form').is(':visible')){
         $('#autoroll-form').hide();        
@@ -15,8 +16,10 @@ var autorollInit = function(){
   $("#onWinReturnToBase").on('click', function(){
     if($("#onWinMultiplier").prop('disabled')){
         $("#onWinMultiplier").prop('disabled', false);    
-    } else {
-        $("#onWinMultiplier").prop('disabled', true);    
+        $('#onWinMultiplier').css('background-color', autoroll.enabled_input_backgroundColor);
+} else {
+        $("#onWinMultiplier").prop('disabled', true);
+        $('#onWinMultiplier').css('background-color', 'grey');
     }
 
   });
@@ -24,12 +27,10 @@ var autorollInit = function(){
   $("#onLoseReturnToBase").on('click', function(){
     if($("#onLoseMultiplier").prop('disabled')){
         $("#onLoseMultiplier").prop('disabled', false);
-        $('#onLoseMultiplier').css('background-color', 'red');
-        $('#onLoseMultiplier').css('color', 'yellow');
+        $('#onLoseMultiplier').css('background-color', autoroll.enabled_input_backgroundColor);
     } else {
-        autoroll.enabled_input_backgroundColor = $('#onLoseMultiplier').css('background-color');
-        autoroll.enabled_input_color = $('#onLoseMultiplier').css('color');
         $("#onLoseMultiplier").prop('disabled', true);    
+        $('#onLoseMultiplier').css('background-color', 'grey');
     }    
   });
 
