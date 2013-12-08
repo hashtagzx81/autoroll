@@ -1,6 +1,8 @@
 // initialise autoroll functionality
 var autorollInit = function(){
 
+$( document ).ready(function() {
+
   $("#autoroll-show").on("click", function(){
     if($('#autoroll-form').is(':visible')){
         $('#autoroll-form').hide();        
@@ -10,5 +12,6 @@ var autorollInit = function(){
   });
   
   console.log('autoroll initialised');
+}
   
 }
