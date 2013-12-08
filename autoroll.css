@@ -33,6 +33,10 @@
  padding:5px;
 }
 
+#autoroll-form tr{
+ height: 40px;
+}
+
 .autoroll-radio{
  text-align:center;
  padding:5px;
