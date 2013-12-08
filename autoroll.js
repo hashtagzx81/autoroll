@@ -1,6 +1,4 @@
-// make the form do what it should
-(function(){
-
+// initialise autoroll functionality
 var autorollInit = function(){
 
   $("#autoroll-show").on("click", function(){
@@ -12,5 +10,3 @@ var autorollInit = function(){
   });
   
 }
-
-})();
