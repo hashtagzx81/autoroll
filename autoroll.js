@@ -13,33 +13,47 @@ var autorollInit = function(){
         $('#autoroll-form').show()
     }
   });
+
+  $("#autoroll-start").on("click", function(){
+    if($('#autoroll-start').text() == "Start"){
+        
+        var base = Number($("#autoroll-base").val()).toFixed(8);
+        var onWinReturnToBase = $('#onWinReturnToBase').prop('checked');
+        var onWinMultiplier = Number($("#onWinMultiplier").val());
+        var onLoseReturnToBase = $('#onLoseReturnToBase').prop('checked');
+        var onLoseMultiplier = Number($("#onLoseMultiplier").val());
+
+        // validation for input fields
+        if(isNaN(base) || isNaN(onWinMultiplier) || isNaN(onLoseMultiplier))
+          return;
+
+        $('#autoroll-start').text("Stop");
+        
+        console.log(base, onWinReturnToBase, onWinMultiplier, onLoseReturnToBase, onLoseMultiplier);
+        
+    } else {
+        $('#autoroll-start').text("Start");
+    }
+  });
   
+  
+  // disable multiplier fields when 'return to base' selected
   $("#onWinReturnToBase").on('click', function(){
     if($("#onWinMultiplier").prop('disabled')){
         $("#onWinMultiplier").prop('disabled', false);    
         $("#onWinMultiplierLabel").prop('disabled', false);    
-        //$('#onWinMultiplier').css('background-color', autoroll.enabled_input_backgroundColor);
-        //$('#onWinMultiplierLabel').css('color', 'autoroll.enabled_label_color');
-} else {
+    } else {
         $("#onWinMultiplier").prop('disabled', true);
         $("#onWinMultiplierLabel").prop('disabled', true);
-        //$('#onWinMultiplier').css('background-color', 'grey');
-        //$('#onWinMultiplierLabel').css('color', 'grey')
     }
-
   });
-  
   $("#onLoseReturnToBase").on('click', function(){
     if($("#onLoseMultiplier").prop('disabled')){
         $("#onLoseMultiplier").prop('disabled', false);
         $("#onLoseMultiplierLabel").prop('disabled', false);
-        //$('#onLoseMultiplier').css('background-color', autoroll.enabled_input_backgroundColor);
-        //$('#onLoseMultiplierLabel').css('color', 'autoroll.enabled_label_color');
     } else {
         $("#onLoseMultiplier").prop('disabled', true);    
         $("#onLoseMultiplierLabel").prop('disabled', true);    
-        //$('#onLoseMultiplier').css('background-color', 'grey');
-        //$('#onLoseMultiplierLabel').css('color', 'grey')
     }    
   });
 
