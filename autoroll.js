@@ -47,7 +47,7 @@ autoroll.init = function(){
         autoroll.maxRolls = max_rolls;
         autoroll.rolls = 0;
         autoroll.bet = autoroll.base;
-        autoroll.start();
+        autoroll.roll();
         
     } else {
         $('#autoroll-start').text("Start");
@@ -78,7 +78,7 @@ autoroll.init = function(){
 
 }
 
-autoroll.start = function(){
+autoroll.roll = function(){
 
 console.log(this);
 
@@ -116,14 +116,56 @@ console.log(this);
 
 }
 
-autoroll.response = function(jdt){
+autoroll.response = function(e){
 
-    console.log(jdt);
+    // update displays
+    glib_dice_roll_data(e);
+
+    var e = JSON.parse(e);
+
+    if(e.status!=1){
+        console.log(r.message);
+        TheGamingLib.UI.MessageBox.Alert(
+            'Message',e.message,{topOffset:-70}
+        );
+        alert("There was a problem with the roll. Stopping auto-roll.");
+        $("#autoroll-start").click();   // turn off auto-roll
+        return;
+    }
+
+    autoroll.rolls++;
+    
+    if(autoroll.rolls >= autoroll.maxRolls){
+        $("#autoroll-start").click();   // turn off auto-roll
+        return;    
+    }
+
+    if(e.game_won == 0){
+        // onLose
+        autoroll.bet = 
+            autoroll.onLose === true
+                ? autoroll.bet = autoroll.base:
+                autoroll.bet *= autoroll.onLose;
+        
+    } else if(e.game_won > 0){
+        // onWin
+        autoroll.bet = 
+            autoroll.onWin === true
+                ? autoroll.bet = autoroll.base:
+                autoroll.bet *= autoroll.onWin;
+        
+    } else {
+        throw new Error("Not sure how we got here! game_won=" + e.game_won);
+    }
+
+    // reduce to 8 decimal places after floating-point multiplication
+    autoroll.bet = Number(autoroll.bet).toFixed(8);
+
+    autoroll.roll();
 
 }
 
 autoroll.stop = function(){
 console.log('to be implemented');
 }
-
 
