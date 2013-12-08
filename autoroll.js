@@ -9,4 +9,6 @@ var autorollInit = function(){
     }
   });
   
+  console.log('autoroll initialised');
+  
 }
