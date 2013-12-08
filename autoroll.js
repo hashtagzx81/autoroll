@@ -1,7 +1,6 @@
 // initialise autoroll functionality
 var autorollInit = function(){
 
-$( document ).ready(function() {
 
   $("#autoroll-show").on("click", function(){
     if($('#autoroll-form').is(':visible')){
@@ -11,7 +10,27 @@ $( document ).ready(function() {
     }
   });
   
-  console.log('autoroll initialised');
-}
+  $("#onWinReturnToBase").on('click', function(){
+    if($("#onWinMultiplier").prop('disabled')){
+        $("#onWinMultiplier").prop('disabled', false);    
+    } else {
+        $("#onWinMultiplier").prop('disabled', true);    
+    }
+
+  });
   
+  $("#onLoseReturnToBase").on('click', function(){
+    if($("#onLoseMultiplier").prop('disabled')){
+//        enabled_css.backgroundColor = $('#onLoseMultiplier').css('background-color');
+        $("#onLoseMultiplier").prop('disabled', false);
+        $('#onLoseMultiplier').css('background-color', 'red');
+        $('#onLoseMultiplier').css('color', 'yellow');
+    } else {
+        $("#onLoseMultiplier").prop('disabled', true);    
+    
+  });
+
+
+  console.log('autoroll initialised');
+
 }
