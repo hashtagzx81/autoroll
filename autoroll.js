@@ -1,8 +1,7 @@
 // make the form do what it should
 (function(){
 
-/*
-  if(jquery)
+var autorollInit = function(){
 
   $("#autoroll-show").on("click", function(){
     if($('#autoroll-form').is(':visible')){
@@ -11,5 +10,7 @@
         $('#autoroll-form').show()
     }
   });
-*/
+  
+}
+
 })();
