@@ -22,14 +22,32 @@ var autorollInit = function(){
         var onWinMultiplier = Number($("#onWinMultiplier").val());
         var onLoseReturnToBase = $('#onLoseReturnToBase').prop('checked');
         var onLoseMultiplier = Number($("#onLoseMultiplier").val());
+        var isLow = 
+            $('input[name="high-low"]:checked').val() == "low" 
+                ? true 
+                : false;
+
+        var max_rolls = Number($("#autoroll-max-rolls").val());
 
         // validation for input fields
-        if(isNaN(base) || isNaN(onWinMultiplier) || isNaN(onLoseMultiplier))
+        if(
+            isNaN(base) || 
+            isNaN(max_rolls) || 
+            isNaN(onWinMultiplier) || 
+            isNaN(onLoseMultiplier)
+        )
           return;
 
         $('#autoroll-start').text("Stop");
         
-        console.log(base, onWinReturnToBase, onWinMultiplier, onLoseReturnToBase, onLoseMultiplier);
+        autoroll.base = base;
+        autoroll.target = isLow ? 0 : 1;
+        autoroll.onWin = onWinReturnToBase ? true : onWinMultiplier;
+        autoroll.onLose = onLoseReturnToBase ? true : onLoseMultiplier;
+        autoroll.maxRolls = max_rolls;
+        autoroll.rolls = 0;
+        autoroll.bet = base;
+        autorollStart();
         
     } else {
         $('#autoroll-start').text("Start");
@@ -57,9 +75,8 @@ var autorollInit = function(){
     }    
   });
 
-
-  // disable onLose checkbox
-  //$('#onLoseReturnToBase').click();
-  console.log('autoroll initialised');
+  var autorollStart = function(){
+console.log(autoroll);
+  }
 
 }
