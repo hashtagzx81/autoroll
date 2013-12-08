@@ -33,6 +33,11 @@
  padding:5px;
 }
 
+.autoroll-radio{
+ text-align:center;
+ padding:5px;
+}
+
 .autoroll-checkbox{
  height:15px;
  width:15px;
