@@ -41,7 +41,7 @@ var autorollInit = function(){
 
 
   // disable onLose checkbox
-  $('#onLoseReturnToBase').click();
+  //$('#onLoseReturnToBase').click();
   console.log('autoroll initialised');
 
 }
