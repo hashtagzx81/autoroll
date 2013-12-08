@@ -27,7 +27,7 @@ var autorollInit = function(){
         $('#onLoseMultiplier').css('color', 'yellow');
     } else {
         $("#onLoseMultiplier").prop('disabled', true);    
-    
+    }    
   });
 
 
