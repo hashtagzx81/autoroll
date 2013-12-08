@@ -105,7 +105,7 @@ console.log(this);
         +'&target='+autoroll.target
         +'&bet='+autoroll.bet
 
-/* using a customised ajax request response
+/* using a customised ajax request + callback
     TheGamingLib.Ajax.getDataReturnText(
         (mDiceApiUrl+'&action=roll&stat=on&seed='+mDiceFairCS+'&cur='+mGLibUserCurUse+'&roll='+tp+'&target='+rol+'&bet='+bet), 
         glib_dice_roll_data
@@ -119,9 +119,6 @@ console.log(this);
 autoroll.response = function(jdt){
 
     console.log(jdt);
-
-}
-
 
 }
 
