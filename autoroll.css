@@ -39,6 +39,10 @@
  margin:5px;
 }
 
+.autoroll-input{
+ margin: 5px;
+}
+
 .autoroll-input:disabled{
  background-color:grey;
 }
