@@ -1,6 +1,6 @@
 /* make the form look pretty :) */
 
-#autoroll-show {
+.autoroll-button {
  display:inline-block;
  font-family:'Orbitron',sans-serif;
  font-size:14px;
@@ -36,4 +36,12 @@
  height:15px;
  width:15px;
  margin:5px;
+}
+
+.autoroll-enabled{
+ background-color:yellow;
+}
+
+.autoroll-disabled{
+ background-color:green;
 }
