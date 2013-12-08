@@ -15,7 +15,7 @@ autoroll.init = function(){
     if($('#autoroll-start').text() == "Start"){
         
         var base = Number($("#autoroll-base").val());
-        var odds = Number($("#autoroll-odds").val()).toFixed(4);
+        var odds = Number($("#autoroll-odds").val());
         var onWinReturnToBase = $('#onWinReturnToBase').prop('checked');
         var onWinMultiplier = Number($("#onWinMultiplier").val());
         var onLoseReturnToBase = $('#onLoseReturnToBase').prop('checked');
