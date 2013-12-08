@@ -40,9 +40,9 @@
 }
 
 .autoroll-input:disabled{
- background-color:yellow;
+ background-color:grey;
 }
 
-.autoroll-input:enabled{
- background-color:green;
+.autoroll-label:disabled{
+ background-color:grey;
 }
