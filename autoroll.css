@@ -25,6 +25,7 @@
  line-height:30px;
  height:34px; 
  cursor:pointer;
+ float: right;
 }
 
 .autoroll-label{
