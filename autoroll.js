@@ -47,7 +47,7 @@ var autorollInit = function(){
         autoroll.maxRolls = max_rolls;
         autoroll.rolls = 0;
         autoroll.bet = base;
-        autorollStart();
+        autoroll.start();
         
     } else {
         $('#autoroll-start').text("Start");
@@ -75,8 +75,8 @@ var autorollInit = function(){
     }    
   });
 
-  var autorollStart = function(){
-console.log(autoroll);
+  autoroll.start = function(){
+console.log(this);
   }
 
 }
