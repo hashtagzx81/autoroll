@@ -1,5 +1,6 @@
 /* make the form look pretty :) */
 
-.autoroll-button {
+#autoroll {
     background-color: red;
+    color: red;
 }
