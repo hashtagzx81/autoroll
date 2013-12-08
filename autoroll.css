@@ -46,3 +46,7 @@
 .autoroll-label:disabled{
  color:grey;
 }
+
+#autoroll-start{
+ width:50px;
+}
