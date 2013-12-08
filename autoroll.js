@@ -46,7 +46,7 @@ autoroll.init = function(){
         autoroll.onLose = onLoseReturnToBase ? true : onLoseMultiplier;
         autoroll.maxRolls = max_rolls;
         autoroll.rolls = 0;
-        autoroll.bet = base;
+        autoroll.bet = autoroll.base;
         autoroll.start();
         
     } else {
@@ -83,7 +83,7 @@ autoroll.start = function(){
 console.log(this);
 
     // ripped from glib_dice_roll
-    if((autoroll.bet<mDiceBetMin) || (bet>mDiceBetMax)){
+    if((autoroll.bet<mDiceBetMin) || (autoroll.bet>mDiceBetMax)){
         TheGamingLib.UI.MessageBox.Alert(
             'Invalid bet range!',
             ('Minimum bet: '
@@ -125,3 +125,5 @@ autoroll.response = function(jdt){
 autoroll.stop = function(){
 console.log('to be implemented');
 }
+
+
