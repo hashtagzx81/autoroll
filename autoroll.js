@@ -80,7 +80,7 @@ autoroll.init = function(){
 
 autoroll.roll = function(){
 
-console.log(this);
+//console.log(this);
 
     // ripped from glib_dice_roll
     if((autoroll.bet<mDiceBetMin) || (autoroll.bet>mDiceBetMax)){
@@ -117,6 +117,8 @@ console.log(this);
 }
 
 autoroll.response = function(e){
+
+console.log(e);
 
     // update displays
     glib_dice_roll_data(e);
