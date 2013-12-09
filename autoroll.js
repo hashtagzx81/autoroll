@@ -133,6 +133,13 @@ autoroll.response = function(e, textStatus, jqXHR){
     }
 
     autoroll.rolls++;
+
+    var remaining = autoroll.maxRolls - autoroll.rolls;
+    var remainingMsg = remaining == 1 
+        ? "1 roll remaining"
+        : remaining + " rolls remaining"; 
+    $("#autoroll-remaining").text(remainingMsg);
+    
     
     if(autoroll.rolls >= autoroll.maxRolls){
         $("#autoroll-start").click();   // toggle button title
