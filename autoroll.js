@@ -48,9 +48,12 @@ autoroll.init = function(){
         autoroll.rolls = 0;
         autoroll.bet = autoroll.base;
         autoroll.stop = false;
-        autoroll.roll();
+        autoroll.roll();        
+
+        $("#autoroll-remaining").show();
         
     } else {
+        $("#autoroll-remaining").hide();
         $('#autoroll-start').text("Start");
         autoroll.stop = true;
     }
