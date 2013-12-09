@@ -53,10 +53,15 @@ autoroll.init = function(){
         $("#autoroll-remaining").show();
         
     } else {
-        $("#autoroll-remaining").hide();
-        $("#autoroll-remaining").text("");
         $('#autoroll-start').text("Start");
         autoroll.stop = true;
+
+        // leave the 'rolls remaining' message up for 2 seconds 
+        // before hiding
+        setTimeout(function(){
+            $("#autoroll-remaining").hide();
+            $("#autoroll-remaining").text("");  // reset msg
+        }, 2000);
     }
   });
   
