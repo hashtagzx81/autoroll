@@ -114,14 +114,13 @@ autoroll.roll = function(){
 
 }
 
-autoroll.response = function(e){
-
-console.log("response", e);
+autoroll.response = function(data, textStatus, jqXHR){
+console.log("response", jqXHR.responseText);
 
     // update displays
-    glib_dice_roll_data(e.toString());
+    glib_dice_roll_data(jqXHR.responseText);
 
-    var e = JSON.parse(e);
+    var e = JSON.parse(data);
 
     if(e.status!=1){
         console.log(r.message);
@@ -168,5 +167,3 @@ console.log("response", e);
 autoroll.stop = function(){
 console.log('to be implemented');
 }
-
-
