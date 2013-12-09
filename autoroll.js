@@ -115,7 +115,6 @@ autoroll.roll = function(){
 }
 
 autoroll.response = function(data, textStatus, jqXHR){
-console.log("response", jqXHR.responseText);
 
     // update displays
     glib_dice_roll_data(jqXHR.responseText);
