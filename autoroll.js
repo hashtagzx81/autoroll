@@ -80,8 +80,6 @@ autoroll.init = function(){
 
 autoroll.roll = function(){
 
-//console.log(this);
-
     // ripped from glib_dice_roll
     if((autoroll.bet<mDiceBetMin) || (autoroll.bet>mDiceBetMax)){
         TheGamingLib.UI.MessageBox.Alert(
@@ -118,10 +116,10 @@ autoroll.roll = function(){
 
 autoroll.response = function(e){
 
-console.log(e);
+console.log("response", e);
 
     // update displays
-    glib_dice_roll_data(e);
+    glib_dice_roll_data(e.toString());
 
     var e = JSON.parse(e);
 
@@ -170,3 +168,5 @@ console.log(e);
 autoroll.stop = function(){
 console.log('to be implemented');
 }
+
+
