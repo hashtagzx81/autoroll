@@ -47,11 +47,12 @@ autoroll.init = function(){
         autoroll.maxRolls = max_rolls;
         autoroll.rolls = 0;
         autoroll.bet = autoroll.base;
+        autoroll.stop = false;
         autoroll.roll();
         
     } else {
         $('#autoroll-start').text("Start");
-        autoroll.stop();
+        autoroll.stop = true;
     }
   });
   
@@ -124,16 +125,19 @@ autoroll.response = function(e, textStatus, jqXHR){
         TheGamingLib.UI.MessageBox.Alert(
             'Message',e.message,{topOffset:-70}
         );
-        alert("There was a problem with the roll. Stopping auto-roll.");
-        $("#autoroll-start").click();   // turn off auto-roll
-        return;
+        $("#autoroll-start").click();   // toggle button title
+        return;                         // exit without another roll
     }
 
     autoroll.rolls++;
     
     if(autoroll.rolls >= autoroll.maxRolls){
-        $("#autoroll-start").click();   // turn off auto-roll
-        return;    
+        $("#autoroll-start").click();   // toggle button title
+        return;                         // exit without another roll
+    }
+    
+    if(autoroll.stop){
+        return;                         // exit without another roll
     }
 
     if(e.game_won == 0){
@@ -160,9 +164,3 @@ autoroll.response = function(e, textStatus, jqXHR){
     autoroll.roll();
 
 }
-
-autoroll.stop = function(){
-console.log('to be implemented');
-}
-
-
