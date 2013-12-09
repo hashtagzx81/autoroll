@@ -56,12 +56,12 @@ autoroll.init = function(){
         $('#autoroll-start').text("Start");
         autoroll.stop = true;
 
-        // leave the 'rolls remaining' message up for 2 seconds 
+        // leave the 'rolls remaining' message up for 3 seconds 
         // before hiding
         setTimeout(function(){
             $("#autoroll-remaining").hide();
             $("#autoroll-remaining").text("");  // reset msg
-        }, 2000);
+        }, 3000);
     }
   });
   
