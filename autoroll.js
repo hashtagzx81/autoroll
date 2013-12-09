@@ -41,7 +41,7 @@ autoroll.init = function(){
         
         autoroll.base = base.toFixed(8);
         autoroll.odds = odds.toFixed(4);
-        autoroll.high-low = isLow == true ? 0 : 1;
+        autoroll.highLow = isLow ? 0 : 1;
         autoroll.onWin = onWinReturnToBase ? true : onWinMultiplier;
         autoroll.onLose = onLoseReturnToBase ? true : onLoseMultiplier;
         autoroll.maxRolls = max_rolls;
@@ -101,7 +101,7 @@ console.log(this);
     var url = mDiceApiUrl
         +'&action=roll&stat=on&seed='+mDiceFairCS
         +'&cur='+mGLibUserCurUse
-        +'&roll='+autoroll.high-low
+        +'&roll='+autoroll.highLow
         +'&target='+autoroll.odds
         +'&bet='+autoroll.bet
 
@@ -168,4 +168,3 @@ autoroll.response = function(e){
 autoroll.stop = function(){
 console.log('to be implemented');
 }
-
