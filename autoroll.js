@@ -54,6 +54,7 @@ autoroll.init = function(){
         
     } else {
         $("#autoroll-remaining").hide();
+        $("#autoroll-remaining").text("");
         $('#autoroll-start').text("Start");
         autoroll.stop = true;
     }
